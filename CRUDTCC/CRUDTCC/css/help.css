@@ -1,0 +1,12 @@
+/* Cole aqui o CSS que estava no <style> da help.php */
+
+.logo {
+  max-width: 90px;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    max-width: 60px;
+  }
+}

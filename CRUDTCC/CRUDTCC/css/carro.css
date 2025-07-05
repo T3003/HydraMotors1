@@ -1,0 +1,188 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: none !important;
+  color: #23272a;
+}
+body.light-mode {
+  background: url('/CRUDTCC/images/Background.png') center center/cover no-repeat fixed !important;
+}
+body.dark-mode {
+  background: url('/CRUDTCC/images/BackgroundDM.jpg') center center/cover no-repeat fixed !important;
+  color: #f5f4ec;
+}
+.main-box {
+  border-radius: 22px;
+  margin: 48px auto 48px auto;
+  padding: 36px 32px 28px 32px;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.car-info-box {
+  background: rgba(245, 245, 245, 0.98);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  color: #23272a;
+}
+.car-info-box-center {
+  text-align: center;
+}
+.carousel-dark-bg {
+  background: rgba(179, 211, 219, 0.92);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 18px;
+  transition: background 0.3s;
+}
+h1, h2, h3, h4, h5, h6, .text-center {
+  color: #23272a;
+}
+.car-thumbs img {
+  border-radius: 8px;
+  border: 2px solid #ecebe3;
+  transition: border 0.2s;
+}
+.car-thumbs img:hover {
+  border: 2px solid #7b5be6;
+}
+/* DARK MODE */
+body.dark-mode {
+  background: url('/CRUDTCC/images/BackgroundDM.jpg') center center/cover no-repeat fixed !important;
+  color: #f5f4ec;
+}
+body.dark-mode .main-box {
+  background: rgba(44, 43, 40, 0.97) !important;
+  color: #f5f4ec !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.30);
+}
+body.dark-mode .card {
+  background-color: #23272a !important;
+  border-color: #444 !important;
+  color: #f5f4ec !important;
+}
+body.dark-mode .car-info-box {
+  background: #23272a !important;
+  color: #f5f4ec !important;
+  border-color: #444 !important;
+}
+body.dark-mode .card-title {
+  color: #ffe066 !important;
+  text-shadow: 0 2px 8px #0008;
+}
+/* Títulos dourados no modo escuro */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #ffe066 !important;
+  text-shadow: 0 2px 8px #0008;
+}
+body.dark-mode .card-body {
+  background: #2c2f34 !important;
+  color: #f5f4ec !important;
+  border-top: 1px solid #444;
+}
+body.dark-mode img {
+  filter: brightness(0.88);
+}
+@media (max-width: 1300px) {
+  .main-box {
+    padding: 18px 4vw;
+    max-width: 99vw;
+  }
+}
+.conforto-card {
+  color: #3b3b6d;
+}
+body.dark-mode .conforto-card {
+  color: #fff !important;
+}
+.conforto-card > div > .text-muted {
+  text-align: left;
+}
+body.dark-mode .conforto-card .text-muted {
+  color: #fff !important;
+  text-align: left;
+}
+/* Zoom modal styles */
+.zoom-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+.zoom-modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 32px #000a;
+}
+.zoom-close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10000;
+  text-shadow: 0 2px 8px #000a;
+}
+.zoom-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  border: none;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 0 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10001;
+  transition: background 0.2s;
+  user-select: none;
+}
+.zoom-nav-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+.carousel-inner img.zoomable-img, .car-thumbs img.zoomable-img {
+  cursor: zoom-in;
+}
+/* Padroniza a logo para altura máxima de 100px em todas as páginas de vendas/categorias */
+.logo img {
+  max-height: 100px !important;
+  width: auto;
+  cursor: default !important;
+  pointer-events: none !important;
+}
+header .logo img {
+  max-height: 100px !important;
+  width: auto;
+  cursor: default !important;
+  pointer-events: none !important;
+}
+/* Remove qualquer efeito de zoom-in da logo */
+.logo img.zoomable-img,
+header .logo img.zoomable-img {
+  cursor: default !important;
+  pointer-events: none !important;
+}

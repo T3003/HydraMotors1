@@ -1,0 +1,65 @@
+body {
+    background: #23272a;
+    min-height: 100vh;
+}
+.perfil-card {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #23272a;
+    color: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+.perfil-foto {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    background: #ddd;
+}
+.perfil-info {
+    background: rgba(44, 62, 80, 0.85);
+    border-radius: 12px;
+    padding: 18px 12px;
+    margin-bottom: 18px;
+}
+.carro-card {
+    background: #2c3e50;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    color: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.btn-primary, .btn-danger, .btn-info {
+    border-radius: 8px;
+}
+.perfil-email {
+    word-break: break-all;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.06);
+    border-radius: 6px;
+    padding: 6px 10px;
+    margin-bottom: 8px;
+    display: block;
+}
+.perfil-email strong {
+    color: #bfc9d1;
+    margin-right: 4px;
+}
+.perfil-email span {
+    color: #fff;
+    font-weight: 400;
+    word-break: break-all;
+}
+@media (max-width: 767px) {
+    .perfil-card {
+        padding: 12px 4px !important;
+    }
+    .perfil-foto {
+        width: 110px;
+        height: 110px;
+    }
+}

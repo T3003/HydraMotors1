@@ -1,0 +1,129 @@
+body {
+    background: #eaf6fa;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222;
+}
+.login-container {
+    background: #f5f4e6ee;
+    padding: 2.5rem 2rem 2rem 2rem;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+.login-container h2 {
+    color: #1976d2;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.login-container label {
+    color: #444;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    background: #fff;
+    color: #222;
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border 0.2s, background 0.2s;
+}
+.login-container input[type="email"]:focus,
+.login-container input[type="password"]:focus {
+    border: 1.5px solid #1976d2;
+    background: #f0f8ff;
+}
+.login-container button {
+    width: 100%;
+    padding: 0.8rem;
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.login-container button:hover {
+    background: #125ca1;
+}
+.login-container .msg {
+    margin-bottom: 1rem;
+    padding: 0.7rem;
+    border-radius: 5px;
+    font-size: 0.98rem;
+}
+.login-container .msg.error {
+    background: #ff3b3b;
+    color: #fff;
+}
+.login-container .msg.success {
+    background: #27c46b;
+    color: #fff;
+}
+@media (max-width: 400px) {
+    .login-container {
+        padding: 1.2rem 0.5rem;
+    }
+}
+/* --- DARK MODE --- */
+body.dark-mode {
+    background: #181c24 !important;
+    color: #fff !important;
+}
+body.dark-mode .login-container {
+    background: #232a34 !important;
+    color: #fff !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25) !important;
+    border-radius: 12px !important;
+}
+body.dark-mode .login-container h2 {
+    color: #00bfff !important;
+    font-weight: 600 !important;
+}
+body.dark-mode .login-container label {
+    color: #e0e0e0 !important;
+}
+body.dark-mode .login-container input[type="email"],
+body.dark-mode .login-container input[type="password"] {
+    background: #1a2028 !important;
+    color: #fff !important;
+    border: none !important;
+}
+body.dark-mode .login-container input[type="email"]:focus,
+body.dark-mode .login-container input[type="password"]:focus {
+    background: #222a36 !important;
+}
+body.dark-mode .login-container button {
+    background: #00bfff !important;
+    color: #fff !important;
+    border: none !important;
+}
+body.dark-mode .login-container button:hover {
+    background: #0099cc !important;
+}
+body.dark-mode .login-container .msg.error {
+    background: #ff3b3b !important;
+    color: #fff !important;
+}
+body.dark-mode .login-container .msg.success {
+    background: #27c46b !important;
+    color: #fff !important;
+}
