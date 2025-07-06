@@ -1,9 +1,9 @@
 <?php
-include '../config.php';
-include '../mysqlexecuta.php';
+include __DIR__ . '/../../config.php';
+include __DIR__ . '/../../mysqlexecuta.php';
 
 $con = conectar();
-$imageDir = '../../images/Carimg/';
+$imageDir = '/images/Carimg/';
 
 // Alterado para buscar apenas catid, catidop1 e catidop2 = 1
 $sql = "SELECT carimg, carnome FROM car WHERE catid = 1 OR catidop1 = 1 OR catidop2 = 1";
@@ -37,10 +37,10 @@ $tema = isset($_GET['tema']) ? $_GET['tema'] : '';
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-4">
               <div class="card" style="width:100%;max-width:260px;min-width:220px;box-shadow:0 2px 10px rgba(0,0,0,0.10);border-radius:10px;overflow:hidden;transition:transform 0.15s;">
                 <a href="Carro.php?nome=<?= urlencode($carName) ?>&tema=<?= urlencode($tema) ?>" style="display:block;">
-                  <?php if (!empty($carImg) && file_exists($imageDir . $carImg)): ?>
+                  <?php if (!empty($carImg) && file_exists($_SERVER['DOCUMENT_ROOT'] . $imageDir . $carImg)): ?>
                     <img src="<?= $imageDir . $carImg ?>" class="card-img-top" alt="<?= htmlspecialchars($carName) ?>" style="width:100%;height:170px;object-fit:cover;background:#eaeaea;">
                   <?php else: ?>
-                    <img src="/CRUDTCC/images/default.jpg" class="card-img-top" alt="Imagem não disponível" style="width:100%;height:170px;object-fit:cover;background:#eaeaea;">
+                    <img src="/images/default.jpg" class="card-img-top" alt="Imagem não disponível" style="width:100%;height:170px;object-fit:cover;background:#eaeaea;">
                   <?php endif; ?>
                 </a>
                 <div class="card-body text-center p-2" style="background:#fff;">

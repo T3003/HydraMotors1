@@ -1,10 +1,9 @@
 <?php
-// Use include_once para evitar redeclaração de funções
-include_once '../config.php';
-include_once '../mysqlexecuta.php';
+include __DIR__ . '/../../config.php';
+include __DIR__ . '/../../mysqlexecuta.php';
 
 $con = conectar();
-$imageDir = '../../images/Carimg/';
+$imageDir = '/images/Carimg/';
 
 // Características disponíveis para filtro
 $caracteristicas = [
@@ -101,7 +100,8 @@ function confortoLabelDesc($valor) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pesquisar Carros</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/CRUDTCC/css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/header.css" rel="stylesheet">
     <style>
       body.dark-mode {
         background: url('/CRUDTCC/images/BackgroundDM.jpg') center center/cover no-repeat fixed !important;
@@ -277,10 +277,10 @@ function confortoLabelDesc($valor) {
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-4">
               <div class="card" style="width:100%;max-width:260px;min-width:220px;box-shadow:0 2px 10px rgba(0,0,0,0.10);border-radius:10px;overflow:hidden;transition:transform 0.15s;">
                 <a href="Carro.php?nome=<?= urlencode($carName) ?>" style="display:block;">
-                  <?php if (!empty($carImg) && file_exists($imageDir . $carImg)): ?>
+                  <?php if (!empty($carImg) && file_exists($_SERVER['DOCUMENT_ROOT'] . $imageDir . $carImg)): ?>
                     <img src="<?= $imageDir . $carImg ?>" class="card-img-top" alt="<?= htmlspecialchars($carName) ?>" style="width:100%;height:170px;object-fit:cover;background:#eaeaea;">
                   <?php else: ?>
-                    <img src="/CRUDTCC/images/default.jpg" class="card-img-top" alt="Imagem não disponível" style="width:100%;height:170px;object-fit:cover;background:#eaeaea;">
+                    <img src="/images/default.jpg" class="card-img-top" alt="Imagem não disponível" style="width:100%;height:170px;object-fit:cover;background:#eaeaea;">
                   <?php endif; ?>
                 </a>
                 <div class="card-body text-center p-2" style="background:#fff;">

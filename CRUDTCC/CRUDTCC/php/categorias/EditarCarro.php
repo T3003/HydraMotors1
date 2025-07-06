@@ -1,14 +1,13 @@
 <?php
-// EditarCarro.php
-include '../config.php';
-include '../mysqlexecuta.php';
+include __DIR__ . '/../../config.php';
+include __DIR__ . '/../../mysqlexecuta.php';
+
+$con = conectar();
+$imageDir = '/images/Carimg/';
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-
-$con = conectar();
-$imageDir = '../../images/Carimg/';
 
 // Recebe o nome do carro via GET ou POST
 $carName = isset($_GET['nome']) ? trim($_GET['nome']) : (isset($_POST['nome']) ? trim($_POST['nome']) : '');
@@ -200,6 +199,8 @@ $nomesCategorias = [
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Editar Carro</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/css/header.css" rel="stylesheet">
   <style>
     body {
       background: url('/CRUDTCC/images/Background.png') center center/cover no-repeat fixed;
@@ -362,10 +363,10 @@ $nomesCategorias = [
           <div class="col-md-4">
             <label class="form-label">Imagem <?= $i ?></label>
             <div class="mb-2 d-flex justify-content-center align-items-center" style="min-height:90px;">
-              <?php if ($imgPath && file_exists($imgPath)): ?>
-                <img src="<?= $imgPath ?>" alt="Imagem <?= $i ?>" style="max-width:100%;max-height:90px;border-radius:8px;border:1px solid #ccc;box-shadow:0 2px 8px #0001;">
+              <?php if ($imgPath && file_exists($_SERVER['DOCUMENT_ROOT'] . $imageDir . $car[$imgField])): ?>
+                <img src="<?= $imageDir . $car[$imgField] ?>" class="card-img-top" alt="<?= htmlspecialchars($carName) ?>" style="width:100%;height:170px;object-fit:cover;background:#eaeaea;">
               <?php else: ?>
-                <span class="text-muted" style="font-size:0.95em;">Sem imagem</span>
+                <img src="/images/default.jpg" class="card-img-top" alt="Imagem não disponível" style="width:100%;height:170px;object-fit:cover;background:#eaeaea;">
               <?php endif; ?>
             </div>
             <input type="file" name="carimg<?= $i ?>" class="form-control" accept="image/*">

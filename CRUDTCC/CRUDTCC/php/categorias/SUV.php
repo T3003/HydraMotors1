@@ -1,6 +1,6 @@
 <?php
-include '../config.php';
-include '../mysqlexecuta.php';
+include __DIR__ . '/../../config.php';
+include __DIR__ . '/../../mysqlexecuta.php';
 
 $con = conectar();
 $imageDir = '/images/Carimg/';

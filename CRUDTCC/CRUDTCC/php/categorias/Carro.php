@@ -1,16 +1,9 @@
 <?php
-// Inclui o arquivo de configuração do banco de dados
-include '../config.php';
-// Inclui o arquivo responsável por executar comandos MySQL
-include '../mysqlexecuta.php';
+include __DIR__ . '/../../config.php';
+include __DIR__ . '/../../mysqlexecuta.php';
 
-// Realiza a conexão com o banco de dados usando PDO (SQLite)
 $con = conectar();
-if (!$con) {
-    die("Erro de conexão com o banco de dados SQLite.");
-}
-// Define o diretório onde estão as imagens dos carros
-$imageDir = '../../images/Carimg/';
+$imageDir = '/images/Carimg/';
 
 // Recebe o nome do carro via GET (exemplo: Carro.php?nome=Fusca)
 $carName = isset($_GET['nome']) ? trim($_GET['nome']) : '';
@@ -134,9 +127,8 @@ $bodyClass = isset($bodyClass) ? $bodyClass : 'light-mode';
     <!-- Define o título da página com o nome do carro ou mensagem de erro -->
     <title><?= $car ? htmlspecialchars($car['carnome']) : 'Carro não encontrado' ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/CRUDTCC/css/style.css" rel="stylesheet">
-    <link href="/CRUDTCC/css/carro.css" rel="stylesheet">
-    <link href="/CRUDTCC/css/header.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/header.css" rel="stylesheet">
   </head>
   <body>
     <!-- Inclui o cabeçalho do site -->
