@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/CRUDTCC/header.php';
+include __DIR__ . '/../../header.php';
 include dirname(__DIR__, 2) . '/conexao.php';
 
 // Get the current script name to determine the active page
